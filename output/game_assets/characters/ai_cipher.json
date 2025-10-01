@@ -1,0 +1,27 @@
+{
+  "callsign": "Cipher",
+  "role": "Hacking Specialist",
+  "specialization": "hacker",
+  "attributes": {
+    "strength": 5.5,
+    "agility": 7.0,
+    "intelligence": 10.0,
+    "accuracy": 6.5,
+    "demolition": 5.0,
+    "hacking": 10.0,
+    "breach": 7.5
+  },
+  "personality": {
+    "humor_level": 0.6,
+    "wit_level": 0.9,
+    "teamwork": 0.7,
+    "aggression": 0.4,
+    "loyalty": 0.8
+  },
+  "quotes": [
+    "I speak firewall.",
+    "Your security is my playground.",
+    "Firewalls are just suggestions.",
+    "Let me renegotiate their security parameters."
+  ]
+}
