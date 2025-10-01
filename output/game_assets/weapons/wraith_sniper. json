@@ -1,0 +1,15 @@
+{
+  "name": "Wraith Sniper",
+  "type": "Sniper Rifle",
+  "damage": 95,
+  "fire_rate": 40,
+  "accuracy": 0.98,
+  "range": 800,
+  "special_features": [
+    "Thermal Scope",
+    "Bipod",
+    "Armor Piercing"
+  ],
+  "unlock_requirement": "Sniper Specialist Level 10",
+  "description": "High-precision sniper rifle capable of extreme long-range engagements."
+}
