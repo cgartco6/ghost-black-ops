@@ -1,0 +1,13 @@
+{
+  "name": "Stealth Cloaking Device",
+  "type": "Special Equipment",
+  "function": "Temporary Invisibility",
+  "duration": 30,
+  "cooldown": 120,
+  "special_features": [
+    "Heat Signature Masking",
+    "Sound Dampening"
+  ],
+  "unlock_requirement": "Completion of Stealth Training",
+  "description": "Advanced optical camouflage system for temporary invisibility and stealth operations."
+}
