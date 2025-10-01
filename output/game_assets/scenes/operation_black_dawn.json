@@ -1,0 +1,20 @@
+{
+  "name": "Operation Black Dawn",
+  "type": "stealth_infiltration",
+  "environment": "Urban",
+  "difficulty": "Medium",
+  "objectives": 4,
+  "enemy_count": 25,
+  "special_features": [
+    "Hacking Points",
+    "Alternative Routes",
+    "Stealth Options"
+  ],
+  "lighting": "Night",
+  "weather": "Clear",
+  "nav_mesh_settings": {
+    "agent_type": "Humanoid",
+    "agent_radius": 0.5,
+    "agent_height": 2.0
+  }
+}
