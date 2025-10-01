@@ -1,0 +1,15 @@
+{
+  "name": "Phantom Rifle",
+  "type": "Assault Rifle",
+  "damage": 45,
+  "fire_rate": 650,
+  "accuracy": 0.85,
+  "range": 300,
+  "special_features": [
+    "Silenced",
+    "Custom Optics",
+    "Underbarrel Launcher"
+  ],
+  "unlock_requirement": "Mission 3 Completion",
+  "description": "Advanced assault rifle with integrated suppressor and modular attachment system."
+}
