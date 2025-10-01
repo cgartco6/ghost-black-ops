@@ -1,0 +1,20 @@
+{
+  "name": "Jungle Strike",
+  "type": "direct_assault",
+  "environment": "Jungle",
+  "difficulty": "Hard",
+  "objectives": 3,
+  "enemy_count": 40,
+  "special_features": [
+    "Ambush Points",
+    "Vertical Combat",
+    "Environmental Hazards"
+  ],
+  "lighting": "Day",
+  "weather": "Rain",
+  "nav_mesh_settings": {
+    "agent_type": "Humanoid",
+    "agent_radius": 0.5,
+    "agent_height": 2.0
+  }
+}
