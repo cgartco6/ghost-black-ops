@@ -1,0 +1,45 @@
+{
+  "title": "Ghost: Black Ops",
+  "synopsis": "An elite special forces team must stop a global terrorist organization from unleashing advanced AI weapons that could destabilize world governments and create a new world order controlled by artificial intelligence.",
+  "main_characters": {
+    "player": "Ghost - Team Leader",
+    "team_members": [
+      "Viper - Demolitions",
+      "Spectre - Sniper",
+      "Cipher - Hacker",
+      "Titan - Assault"
+    ],
+    "antagonists": [
+      "General Markov - Main Antagonist",
+      "Dr. Chen - AI Specialist",
+      "The Syndicate - Terror Organization"
+    ]
+  },
+  "story_arcs": [
+    {
+      "act": "I",
+      "title": "The Awakening",
+      "missions": 5,
+      "objective": "Uncover the terrorist plot and identify key players"
+    },
+    {
+      "act": "II",
+      "title": "Global Hunt",
+      "missions": 8,
+      "objective": "Track down syndicate leaders across multiple continents"
+    },
+    {
+      "act": "III",
+      "title": "Final Confrontation",
+      "missions": 4,
+      "objective": "Prevent global catastrophe and eliminate the threat"
+    }
+  ],
+  "themes": [
+    "Loyalty",
+    "Sacrifice",
+    "Technology vs Humanity",
+    "Teamwork",
+    "Ethics of AI Warfare"
+  ]
+}
