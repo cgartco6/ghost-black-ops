@@ -1,0 +1,12 @@
+{
+  "name": "Advanced Comms System",
+  "type": "Gadget",
+  "function": "Team Communication",
+  "special_features": [
+    "Encrypted Channels",
+    "Long Range",
+    "Multi-Frequency"
+  ],
+  "unlock_requirement": "Team Leader",
+  "description": "Secure communication system for team coordination and intelligence gathering."
+}
