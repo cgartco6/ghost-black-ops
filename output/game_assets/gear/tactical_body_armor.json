@@ -1,0 +1,12 @@
+{
+  "name": "Tactical Body Armor",
+  "type": "Armor",
+  "protection": 0.6,
+  "mobility_penalty": 0.1,
+  "special_features": [
+    "Ballistic Plates",
+    "Modular Attachments"
+  ],
+  "slots": 3,
+  "description": "Advanced body armor system with modular attachment points for equipment."
+}
