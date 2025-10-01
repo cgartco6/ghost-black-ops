@@ -1,0 +1,27 @@
+{
+  "mission_id": "M02",
+  "name": "Jungle Strike",
+  "type": "direct_assault",
+  "location": "Jungle Outpost",
+  "primary_objectives": [
+    "Eliminate enemy commander",
+    "Destroy weapon cache",
+    "Secure extraction point"
+  ],
+  "secondary_objectives": [
+    "Rescue hostages",
+    "Destroy communication array",
+    "Collect enemy intel"
+  ],
+  "enemy_types": [
+    "Heavy Soldiers",
+    "Snipers",
+    "Technical Vehicles"
+  ],
+  "special_conditions": [
+    "Daytime assault",
+    "Reinforcements possible"
+  ],
+  "difficulty": "Hard",
+  "recommended_level": 5
+}
