@@ -1,0 +1,33 @@
+system:
+  type: windows
+  max_agents: 8
+  max_memory_gb: 12
+  enable_gpu: true
+  gpu_priority: true
+
+game:
+  name: "Ghost: Black Ops"
+  version: "1.0.0"
+  target_platforms: ["windows", "ubuntu"]
+
+ai:
+  model_provider: "openai"
+  max_concurrent_tasks: 4
+  enable_learning: true
+  training_interval: 3600
+
+unity:
+  project_path: "./unity_project"
+  assets_path: "./unity_project/Assets"
+  scripts_path: "./unity_project/Assets/Scripts"
+
+performance:
+  texture_quality: "high"
+  shadow_quality: "medium"
+  anti_aliasing: "msaa_2x"
+  target_fps: 60
+
+development:
+  auto_save: true
+  backup_interval: 300
+  version_control: true
