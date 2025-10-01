@@ -1,0 +1,26 @@
+{
+  "name": "Ghost",
+  "role": "Team Leader",
+  "attributes": {
+    "strength": 8.5,
+    "agility": 9.0,
+    "intelligence": 8.0,
+    "accuracy": 9.5,
+    "demolition": 7.0,
+    "hacking": 6.5,
+    "breach": 8.0
+  },
+  "personality": {
+    "humor_level": 0.7,
+    "wit_level": 0.9,
+    "teamwork": 1.0,
+    "aggression": 0.6,
+    "loyalty": 1.0
+  },
+  "special_abilities": [
+    "Tactical Command",
+    "Enhanced Perception",
+    "Combat Instincts"
+  ],
+  "backstory": "Former special forces operator with exceptional leadership skills and tactical brilliance. Known for completing impossible missions with minimal casualties."
+}
