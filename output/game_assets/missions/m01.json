@@ -1,0 +1,27 @@
+{
+  "mission_id": "M01",
+  "name": "Operation Silent Entry",
+  "type": "stealth_infiltration",
+  "location": "Urban Facility",
+  "primary_objectives": [
+    "Infiltrate the compound undetected",
+    "Hack the security system",
+    "Retrieve intelligence data"
+  ],
+  "secondary_objectives": [
+    "Do not trigger alarms",
+    "Collect additional evidence",
+    "Extract without casualties"
+  ],
+  "enemy_types": [
+    "Guards",
+    "Security Cameras",
+    "Drones"
+  ],
+  "special_conditions": [
+    "Night operation",
+    "Time limit: 30 minutes"
+  ],
+  "difficulty": "Medium",
+  "recommended_level": 1
+}
