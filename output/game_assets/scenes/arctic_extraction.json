@@ -1,0 +1,20 @@
+{
+  "name": "Arctic Extraction",
+  "type": "extraction_mission",
+  "environment": "Arctic",
+  "difficulty": "Expert",
+  "objectives": 2,
+  "enemy_count": 35,
+  "special_features": [
+    "Blizzard Conditions",
+    "Limited Visibility",
+    "Thermal Imaging"
+  ],
+  "lighting": "Dynamic",
+  "weather": "Snowstorm",
+  "nav_mesh_settings": {
+    "agent_type": "Humanoid",
+    "agent_radius": 0.5,
+    "agent_height": 2.0
+  }
+}
