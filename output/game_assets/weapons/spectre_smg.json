@@ -1,0 +1,15 @@
+{
+  "name": "Spectre SMG",
+  "type": "Submachine Gun",
+  "damage": 30,
+  "fire_rate": 900,
+  "accuracy": 0.75,
+  "range": 150,
+  "special_features": [
+    "Integrated Suppressor",
+    "Rapid Fire",
+    "Laser Sight"
+  ],
+  "unlock_requirement": "Default",
+  "description": "Compact SMG perfect for close-quarters combat and stealth operations."
+}
