@@ -1,0 +1,31 @@
+{
+  "game_world": {
+    "name": "Ghost: Black Ops Universe",
+    "settings": [
+      "Urban",
+      "Jungle",
+      "Arctic",
+      "Desert",
+      "Mountain"
+    ],
+    "time_period": "Near Future",
+    "themes": [
+      "Tactical Espionage",
+      "High-Tech Warfare",
+      "Global Conflict"
+    ]
+  },
+  "level_types": {
+    "stealth_infiltration": 40,
+    "direct_assault": 30,
+    "defense_mission": 15,
+    "extraction_mission": 15
+  },
+  "environment_features": [
+    "Destructible Environments",
+    "Dynamic Weather",
+    "Day/Night Cycle",
+    "Interactive Objects",
+    "Vertical Combat Spaces"
+  ]
+}
