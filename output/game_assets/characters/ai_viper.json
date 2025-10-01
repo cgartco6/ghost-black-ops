@@ -1,0 +1,27 @@
+{
+  "callsign": "Viper",
+  "role": "Demolitions Expert",
+  "specialization": "demolitions",
+  "attributes": {
+    "strength": 9.0,
+    "agility": 6.5,
+    "intelligence": 7.0,
+    "accuracy": 7.5,
+    "demolition": 10.0,
+    "hacking": 5.0,
+    "breach": 8.5
+  },
+  "personality": {
+    "humor_level": 0.8,
+    "wit_level": 0.7,
+    "teamwork": 0.9,
+    "aggression": 0.8,
+    "loyalty": 0.9
+  },
+  "quotes": [
+    "I make things go boom!",
+    "That's not a problem, it's a target.",
+    "Stand back, this might get loud!",
+    "Explosives are my love language."
+  ]
+}
