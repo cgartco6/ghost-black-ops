@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghosts: Back Ops - Admin Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            background: var(--secondary);
+            padding: 20px;
+        }
+        
+        .main-content {
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .stat-card {
+            background: var(--accent);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .revenue-high { color: #00ff88; }
+        .chart-container { height: 300px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <h2>Ghosts: Back Ops</h2>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#revenue">Revenue Analytics</a></li>
+                    <li><a href="#players">Player Database</a></li>
+                    <li><a href="#missions">Mission Stats</a></li>
+                    <li><a href="#ai">AI Performance</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="main-content">
+            <!-- Real-time Stats -->
+            <div class="stat-card">
+                <h3>Live Players</h3>
+                <div id="livePlayers" class="stat-number">0</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Today's Revenue</h3>
+                <div id="dailyRevenue" class="stat-number revenue-high">$0</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Active Missions</h3>
+                <div id="activeMissions" class="stat-number">0</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Avg eCPM</h3>
+                <div id="avgECPM" class="stat-number revenue-high">$0</div>
+            </div>
+            
+            <!-- Charts -->
+            <div class="stat-card" style="grid-column: span 2;">
+                <h3>Revenue Trend</h3>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="stat-card" style="grid-column: span 2;">
+                <h3>Player Geography</h3>
+                <div class="chart-container">
+                    <canvas id="geoChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Player Table -->
+            <div class="stat-card" style="grid-column: span 2;">
+                <h3>Recent Players</h3>
+                <table id="playersTable">
+                    <thead>
+                        <tr>
+                            <th>Player ID</th>
+                            <th>Location</th>
+                            <th>Level</th>
+                            <th>Revenue</th>
+                            <th>Play Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="playersTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dashboard JavaScript
+        class GhostsDashboard {
+            constructor() {
+                this.socket = null;
+                this.init();
+            }
+            
+            init() {
+                this.connectWebSocket();
+                this.loadInitialData();
+                setInterval(() => this.updateData(), 5000);
+            }
+            
+            connectWebSocket() {
+                this.socket = new WebSocket('wss://your-game-server.com/dashboard');
+                
+                this.socket.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    this.handleRealTimeData(data);
+                };
+            }
+            
+            async loadInitialData() {
+                try {
+                    const response = await fetch('/api/dashboard/stats');
+                    const data = await response.json();
+                    this.updateDisplay(data);
+                } catch (error) {
+                    console.error('Failed to load dashboard data:', error);
+                }
+            }
+            
+            handleRealTimeData(data) {
+                if (data.type === 'player_joined') {
+                    this.updatePlayerCount(data.count);
+                } else if (data.type === 'revenue_update') {
+                    this.updateRevenue(data.revenue);
+                } else if (data.type === 'mission_completed') {
+                    this.updateMissionStats(data);
+                }
+            }
+            
+            updateDisplay(data) {
+                document.getElementById('livePlayers').textContent = data.livePlayers.toLocaleString();
+                document.getElementById('dailyRevenue').textContent = '$' + data.dailyRevenue.toLocaleString();
+                document.getElementById('activeMissions').textContent = data.activeMissions.toLocaleString();
+                document.getElementById('avgECPM').textContent = '$' + data.avgECPM.toFixed(2);
+                
+                this.updateCharts(data.charts);
+                this.updatePlayerTable(data.recentPlayers);
+            }
+            
+            updateCharts(chartData) {
+                // Revenue Chart
+                const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+                new Chart(revenueCtx, {
+                    type: 'line',
+                    data: {
+                        labels: chartData.revenue.labels,
+                        datasets: [{
+                            label: 'Revenue ($)',
+                            data: chartData.revenue.data,
+                            borderColor: '#e94560',
+                            backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+                
+                // Geography Chart
+                const geoCtx = document.getElementById('geoChart').getContext('2d');
+                new Chart(geoCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: chartData.geography.labels,
+                        datasets: [{
+                            data: chartData.geography.data,
+                            backgroundColor: [
+                                '#e94560', '#0f3460', '#16213e', '#1a1a2e', '#00ff88'
+                            ]
+                        }]
+                    }
+                });
+            }
+            
+            updatePlayerTable(players) {
+                const tbody = document.getElementById('playersTableBody');
+                tbody.innerHTML = '';
+                
+                players.forEach(player => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${player.id}</td>
+                        <td>${player.country} | ${player.city}</td>
+                        <td>${player.level}</td>
+                        <td class="revenue-high">$${player.revenue}</td>
+                        <td>${this.formatPlayTime(player.playTime)}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            }
+            
+            formatPlayTime(minutes) {
+                const hours = Math.floor(minutes / 60);
+                const mins = minutes % 60;
+                return `${hours}h ${mins}m`;
+            }
+            
+            updatePlayerCount(count) {
+                document.getElementById('livePlayers').textContent = count.toLocaleString();
+            }
+            
+            updateRevenue(revenue) {
+                document.getElementById('dailyRevenue').textContent = '$' + revenue.toLocaleString();
+            }
+        }
+        
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new GhostsDashboard();
+        });
+    </script>
+</body>
+</html>
