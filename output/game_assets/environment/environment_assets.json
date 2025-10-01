@@ -1,0 +1,28 @@
+{
+  "buildings": [
+    "Military Compound",
+    "Research Facility",
+    "Urban Apartment",
+    "Underground Bunker"
+  ],
+  "vegetation": [
+    "Tropical Trees",
+    "Desert Plants",
+    "Arctic Flora",
+    "Urban Greenery"
+  ],
+  "props": [
+    "Vehicles",
+    "Weapon Crates",
+    "Computers",
+    "Security Systems",
+    "Destructible Objects"
+  ],
+  "effects": [
+    "Explosions",
+    "Smoke",
+    "Fire",
+    "Weather Effects",
+    "Bullet Impacts"
+  ]
+}
