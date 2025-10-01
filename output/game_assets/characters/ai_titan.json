@@ -1,0 +1,27 @@
+{
+  "callsign": "Titan",
+  "role": "Assault Specialist",
+  "specialization": "assault",
+  "attributes": {
+    "strength": 10.0,
+    "agility": 7.0,
+    "intelligence": 6.5,
+    "accuracy": 8.0,
+    "demolition": 7.5,
+    "hacking": 5.0,
+    "breach": 9.0
+  },
+  "personality": {
+    "humor_level": 0.7,
+    "wit_level": 0.5,
+    "teamwork": 0.95,
+    "aggression": 0.9,
+    "loyalty": 1.0
+  },
+  "quotes": [
+    "I'll draw their fire!",
+    "Nothing stops the Titan!",
+    "Heavy ordinance coming through!",
+    "When in doubt, use more firepower."
+  ]
+}
