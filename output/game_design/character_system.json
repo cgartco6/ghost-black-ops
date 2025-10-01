@@ -1,0 +1,34 @@
+{
+  "system_name": "Ghost: Black Ops Character System",
+  "base_attributes": [
+    "strength",
+    "agility",
+    "intelligence",
+    "accuracy"
+  ],
+  "special_skills": [
+    "demolition",
+    "hacking",
+    "breach",
+    "stealth"
+  ],
+  "personality_traits": [
+    "humor",
+    "wit",
+    "teamwork",
+    "loyalty"
+  ],
+  "progression_system": {
+    "level_cap": 50,
+    "skill_points_per_level": 5,
+    "prestige_levels": 5
+  },
+  "character_classes": [
+    "Assault",
+    "Sniper",
+    "Demolitions",
+    "Hacker",
+    "Medic",
+    "Leader"
+  ]
+}
