@@ -1,0 +1,27 @@
+{
+  "callsign": "Spectre",
+  "role": "Sniper Specialist",
+  "specialization": "sniper",
+  "attributes": {
+    "strength": 7.0,
+    "agility": 8.5,
+    "intelligence": 8.0,
+    "accuracy": 10.0,
+    "demolition": 6.0,
+    "hacking": 7.0,
+    "breach": 7.0
+  },
+  "personality": {
+    "humor_level": 0.4,
+    "wit_level": 0.6,
+    "teamwork": 0.8,
+    "aggression": 0.3,
+    "loyalty": 0.95
+  },
+  "quotes": [
+    "One shot, one kill.",
+    "Patience is a weapon.",
+    "Target acquired... and eliminated.",
+    "The quiet professionals."
+  ]
+}
